@@ -18,6 +18,13 @@ float Vector2::Magnitude()
 	return sqrt(X * X + Y * Y);
 }
 
+// Returns the length of the vector squared
+// Used for length comparisons without needing roots
+float Vector2::MagnitudeSquared()
+{
+	return X * X + Y * Y;
+}
+
 // Normalizes the vector
 Vector2 Vector2::Normal()
 {

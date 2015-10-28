@@ -10,6 +10,7 @@ public:
 	Vector2(void);
 	Vector2(float, float);
 	float Magnitude();
+	float MagnitudeSquared();
 	Vector2 Normal();
 	void setMagnitude(float);
 
