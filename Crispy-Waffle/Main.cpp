@@ -1,18 +1,27 @@
 #include <cmath>
 #include <vector>
 #include <Windows.h>
+
 #include <GL/glut.h>
+
+#include "Enemy.h"
 #include "Gamepad.h"
 #include "Vector2.h"
 
 using namespace std;
 
-//-----------Prototypes----------//
+// Prototypes
+//--------------------------//
 void init(void);
 void displayFunc(void);
 void timerFunc(int);
 
-//----------Main----------//
+// Variables
+//--------------------------//
+vector<Enemy> enemies;
+
+// Main
+//--------------------------//
 void main(int argc, char **argv)
 {
 	glutInit(&argc, argv);
@@ -20,16 +29,17 @@ void main(int argc, char **argv)
 	glutInitWindowPosition(50, 100);
 	glutInitWindowSize(1280, 600);
 
-	glutCreateWindow("Crispy Waffle");
+	glutCreateWindow("Crispy-Waffle");
 
-	init();
+	initOpenGL();
 	glutDisplayFunc(displayFunc);
 	glutTimerFunc(20, timerFunc, 0);
 	glutMainLoop();
 }
 
-//----------OpenGL functions----------//
-void init(void)
+// OpenGL functions
+//--------------------------//
+void initOpenGL(void)
 {
 	//Set up the window
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -91,4 +101,13 @@ void checkController()
 		location += leftStick * 5;
 
 	controller.RefreshState();
+}
+
+// Game Functions
+//--------------------------//
+
+void spawnEnemy(Enemy e, int chance)
+{
+	if (rand() % chance == 0)
+		enemies.push_back(e);
 }
