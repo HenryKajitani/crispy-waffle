@@ -37,11 +37,21 @@ Vector2 Vector2::Normal()
 }
 
 // Sets the magnitude of the vector
-void Vector2::setMagnitude(float mag)
+void Vector2::SetMagnitude(float mag)
 {
 	Vector2 v = this->Normal();
 	X = v.X*mag;
 	Y = v.Y*mag;
+}
+
+float Vector2::Dot(Vector2 other)
+{
+	return X * other.X + Y * other.Y;
+}
+
+float Vector2::Cross(Vector2 other)
+{
+	return X * other.Y - Y * other.X;
 }
 
 Vector2 Vector2::operator+(Vector2 other)

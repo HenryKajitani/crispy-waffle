@@ -16,7 +16,7 @@ Enemy::Enemy(float red, float green, float blue, Vector2 location, Vector2 targe
 	this->winEdge = winEdge;
 
 	velocity = target - location;
-	velocity.setMagnitude(maxSpeed);
+	velocity.SetMagnitude(maxSpeed);
 
 	pointValue = 5;
 

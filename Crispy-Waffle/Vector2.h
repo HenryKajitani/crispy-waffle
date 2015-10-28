@@ -12,7 +12,10 @@ public:
 	float Magnitude();
 	float MagnitudeSquared();
 	Vector2 Normal();
-	void setMagnitude(float);
+	void SetMagnitude(float);
+
+	float Dot(Vector2);
+	float Cross(Vector2);
 
 	Vector2 operator+(Vector2);
 	Vector2 operator-(Vector2);
