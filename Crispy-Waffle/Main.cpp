@@ -88,6 +88,9 @@ void timerFunc(int n)
 	glutTimerFunc(17, timerFunc, 0);
 }
 
+// Game Functions
+//--------------------------//
+
 void checkController()
 {
 	controller.Update(); // Update the gamepad
@@ -102,9 +105,6 @@ void checkController()
 
 	controller.RefreshState();
 }
-
-// Game Functions
-//--------------------------//
 
 void spawnEnemy(Enemy e, int chance)
 {
